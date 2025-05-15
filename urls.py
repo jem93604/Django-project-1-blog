@@ -7,5 +7,4 @@ urlpatterns = [
     path("register/", views.register, name="register"),
     path("", include("blog.urls")),
     path("blogs/", include("blogs.urls")),
-    path("blogs/", include("blogs.urls")),
 ]
