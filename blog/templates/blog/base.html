@@ -33,16 +33,22 @@
             </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
-              {% if user.is_authenticated %}
-            <form method="post" action="{% url 'logout' %}" style="display:inline;">
-              {% csrf_token %}
-                <button type="submit" class="nav-item nav-link btn btn-link" style="padding:0; border:none; background:none;">Logout</button>
-            </form>
-              {% else %}
-              <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
-              <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
-              {%endif%}
-            </div>
+
+{% if user.is_authenticated %}
+  <div class="d-inline-flex align-items-center">
+<div style="margin-right: 10px;">
+    <form method="post" action="{% url 'logout' %}" class="m-0 p-0">
+      {% csrf_token %}
+      <button type="submit" class="nav-item nav-link btn btn-link m-0 p-0 me-2" style="border:none; background:none;">Logout  </button>
+    </form>
+</div>
+    <a class="nav-item nav-link btn btn-link m-0 p-0" style="border:none; background:none;" href="{% url 'profile' %}">Profile</a>
+  </div>
+{% else %}
+  <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+  <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+{% endif %}
+           </div>
           </div>
         </div>
       </nav>
