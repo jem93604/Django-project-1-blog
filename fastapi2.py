@@ -22,7 +22,12 @@ async def summarizewithllm(request: Request):
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Django dev server
+    allow_origins=[
+        "*",
+        "http://localhost:8000",
+        "http://127.0.0.1:8000",
+    ],  # Django dev server
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
