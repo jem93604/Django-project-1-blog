@@ -1,5 +1,14 @@
 import requests
 import json
+#
+# import argparse
+#
+# parser = argparse.ArgumentParser(description="Accept a string as an argument")
+# parser.add_argument("input_string", type=str, help="The string you want to pass")
+# args = parser.parse_args()
+#
+# print("You entered:", args.input_string)
+#
 
 
 def llm_inference(text):
